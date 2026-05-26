@@ -1,6 +1,13 @@
 import questionary
 
 
+class Config:
+    def __init__(self, url: str, media_type: str, format: str):
+        self.url = url
+        self.media_type = media_type
+        self.format = format
+
+
 class Prompt:
     def __init__(self):
         self._url: str = ""
@@ -26,7 +33,7 @@ class Prompt:
         ]
         self._format_choices: [str] = []
 
-    def collect_config(self) -> dict:
+    def collect_config(self) -> Config:
         self._url = self._ask_url()
         self._media_type = self._ask_media_type()
 
@@ -42,11 +49,8 @@ class Prompt:
             choices=self._format_choices
         ).ask()
 
-        return {
-            "url": self._url,
-            "media_type": self._media_type,
-            "format": format
-        }
+        return Config(
+            url=self._url, media_type=self._media_type, format=format)
 
     def _ask_url(self):
         return questionary.text(
