@@ -6,24 +6,9 @@ class Prompt:
         self._url: str = ""
         self._media_type: str = ""
         self._audio_formats: [str] = [
-            "mp3",
-            "m4a",
-            "aac",
-            "opus",
-            "ogg",
-            "vorbis",
-            "flac",
-            "wav",
-            "alac"
+            "aac", "flac", "mp3", "m4a", "opus", "vorbis", "wav"
         ]
-        self._video_formats: [str] = [
-            "mp4",
-            "webm",
-            "mkv",
-            "mov",
-            "flv",
-            "avi"
-        ]
+        self._video_formats: [str] = ["mkv", "mp4"]
         self._format_choices: [str] = []
 
     def collect_config(self) -> dict:
