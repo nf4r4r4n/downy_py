@@ -44,7 +44,13 @@ class Downloader:
             "outtmpl": "downloads/%(title)s.%(ext)s",
             "progress_hooks": [self.progrss_hook],
             "quiet": True,
-            "noprogress": True
+            "noprogress": True,
+            "jsc_executable": "node",
+            "extractor_args": {
+                "youtube": {
+                    "player_js_version": ["actual"]
+                }
+            }
         }
 
         if self._config["media_type"] == "audio":
