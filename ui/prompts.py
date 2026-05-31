@@ -27,6 +27,9 @@ class Prompt:
             choices=self._format_choices
         ).ask()
 
+        if format is None:
+            raise KeyboardInterrupt
+
         return {
             "url": self._url,
             "media_type": self._media_type,
@@ -34,16 +37,26 @@ class Prompt:
         }
 
     def _ask_url(self):
-        return questionary.text(
+        result = questionary.text(
             "Enter URL:",
             qmark="\ueab6",
         ).ask()
 
+        if result is None:
+            raise KeyboardInterrupt
+
+        return result
+
     def _ask_media_type(self):
-        return questionary.select(
+        result = questionary.select(
             "Choose the media type:",
             qmark="\ueab6",
             pointer="\uf4c3",
             choices=["audio", "video"],
             default="audio"
         ).ask()
+
+        if result is None:
+            raise KeyboardInterrupt
+
+        return result

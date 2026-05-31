@@ -1,5 +1,9 @@
 from ui.prompts import Prompt
 from core.dowloader import Downloader
+from rich.panel import Panel
+from rich.console import Console
+
+console = Console()
 
 
 def main():
@@ -7,11 +11,16 @@ def main():
     config = prompt.collect_config()
 
     downloader = Downloader(config)
-    try:
-        downloader.download()
-    except Exception as e:
-        print(f"Error: {e}")
+    downloader.download()
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        console.print(
+            Panel.fit(
+                "[bold yellow]Download cancelled.[/bold yellow]",
+                border_style="yellow"
+            )
+        )
