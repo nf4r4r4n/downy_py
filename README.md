@@ -9,7 +9,7 @@ A modern and interactive CLI video/audio downloader built with Python using:
 
 The project provides a clean terminal experience for downloading and converting media from supported platforms such as YouTube.
 
-[![Downy Demo](Demo)](./screenshots/downy_py.mp4)
+https://github.com/user-attachments/assets/abff5e0e-8845-41df-8be4-b461a2ec8145
 
 ---
 
