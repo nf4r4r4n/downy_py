@@ -1,5 +1,5 @@
 from ui.prompts import Prompt
-from core.dowloader import Downloader
+from core.downloader import Downloader
 from rich.panel import Panel
 from rich.console import Console
 
