@@ -6,8 +6,8 @@ including progress tracking and format conversion.
 """
 
 from yt_dlp import YoutubeDL
-from ui.display import create_progress
-import config as cfg
+from downy.ui.display import create_progress
+from downy import config as cfg
 
 
 class Downloader:

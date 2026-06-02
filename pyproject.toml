@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "downy"
+version = "0.1.0"
+description = "Interactive Media Downloader — download audio/video from online sources"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Baibs Fararano", email = "baibs.fararano@email.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "yt-dlp>=2023.0",
+    "questionary>=2.0",
+    "rich>=13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nf4r4r4n/downy_py"
+Repository = "https://github.com/nf4r4r4n/downy_py.git"
+
+[project.scripts]
+downy = "downy:main"
+
+[tool.setuptools.packages.find]
+include = ["downy*"]

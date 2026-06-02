@@ -6,7 +6,7 @@ including media URL, type (audio/video), and output format selection.
 """
 
 import questionary
-import config as cfg
+from downy import config as cfg
 
 
 class Prompt:
